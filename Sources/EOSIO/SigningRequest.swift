@@ -708,7 +708,7 @@ public struct ResolvedSigningRequest: Hashable, Equatable {
 
             public func encode(to encoder: Encoder) throws {
                 var sigContainer = encoder.container(keyedBy: SignatureKey.self)
-                for i in 1..<self.signatures.count {
+                for i in 0..<self.signatures.count {
                     try sigContainer.encode(self.signatures[i], forKey: SignatureKey(i))
                 }
                 var container = encoder.container(keyedBy: Key.self)
